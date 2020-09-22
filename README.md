@@ -6,7 +6,7 @@
 
 I created this website using Javascript.
 and weather API you will be able to Search for any city in the world and you will be able to check Temperature
-Humidity,Wind Speed
+Humidity,Wind Speed.
 
 
 
