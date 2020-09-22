@@ -30,7 +30,7 @@ $(document).ready(function() {
     //load weather data
     function loadWeatherData(cityName) {
         //build url link
-        var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=abea8c198be08a98a25f51dd94240c1c`;
+        var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=abea8c198be08a98a25f51dd94240c1c&units=imperial`;
         //get the data necessary for today
         $.ajax({
             type: "GET",
@@ -57,7 +57,7 @@ $(document).ready(function() {
                             data.weather[0].icon
                             }.png"/>
                         </h3>
-                        <p class="card-text">Temperature: ${data.main.temp} °F</p>
+                        <p class="card-text">Temperature: ${data.main.temp}  °F</p>
                         <p class="card-text">Humidity: ${data.main.humidity} %</p>
                         <p class="card-text">Wind Speed: ${
                         data.wind.speed
@@ -90,7 +90,7 @@ $(document).ready(function() {
 
         //get the data necessary for forcast
         function loadForcastData(cityName) {
-            var forcastURl = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=abea8c198be08a98a25f51dd94240c1c`;
+            var forcastURl = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=abea8c198be08a98a25f51dd94240c1c&units=imperial`;
             $.ajax({
                 type: "GET",
                 url: forcastURl,
