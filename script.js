@@ -30,7 +30,7 @@ $(document).ready(function() {
     //load weather data
     function loadWeatherData(cityName) {
         //build url link
-        var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=abea8c198be08a98a25f51dd94240c1c&units=imperial`;
+        var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=abea8c198be08a98a25f51dd94240c1c&units=imperial`;
         //get the data necessary for today
         $.ajax({
             type: "GET",
@@ -53,7 +53,7 @@ $(document).ready(function() {
                     <div class="card-body">
                         <h3 class="card-title">
                             ${data.name} (${new Date().toLocaleDateString()})
-                            <img src="http://openweathermap.org/img/w/${
+                            <img src="https://openweathermap.org/img/w/${
                             data.weather[0].icon
                             }.png"/>
                         </h3>
@@ -90,7 +90,7 @@ $(document).ready(function() {
 
         //get the data necessary for forcast
         function loadForcastData(cityName) {
-            var forcastURl = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=abea8c198be08a98a25f51dd94240c1c&units=imperial`;
+            var forcastURl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=abea8c198be08a98a25f51dd94240c1c&units=imperial`;
             $.ajax({
                 type: "GET",
                 url: forcastURl,
@@ -114,7 +114,7 @@ $(document).ready(function() {
                                     <div class="card bg-primary text-white">
                                         <div class="card-body p-2">
                                             <h5 class="card-title">${new Date(data.list[i].dt_txt).toLocaleDateString()}</h5>
-                                            <img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png" />
+                                            <img src="https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png" />
                                             <p class="card-text">Temp: ${ data.list[i].main.temp_max} °F</p>
                                             <p class="card-text">Humidity: ${data.list[i].main.humidity} %</p>
                                         </div>
